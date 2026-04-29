@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rebecca Massicotte — Founder & CEO, Red Fox Medical Courier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --red:       #B91C1C;
+  --red-light: #DC2626;
+  --red-dim:   rgba(185,28,28,0.12);
+  --ink:       #0F0B09;
+  --ink-soft:  #2C1F18;
+  --muted:     #7C6458;
+  --cream:     #FAF6F1;
+  --warm:      #F3EBE0;
+  --rule:      #DDD0C2;
+  --dark:      #141010;
+  --dark-2:    #1E1815;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--ink); background: var(--cream); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* HERO */
+.hero { background: var(--dark); color: #F5EFE7; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(160deg, rgba(185,28,28,0.06) 0%, transparent 60%); pointer-events: none; z-index: 1; }
+.hero-left { position: relative; z-index: 2; padding: 72px 64px 72px 80px; display: flex; flex-direction: column; justify-content: center; }
+.hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red-light); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1.5px; background: var(--red-light); }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(52px, 6vw, 88px); font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; color: #F5EFE7; margin-bottom: 12px; }
+.hero-name span { color: var(--red-light); display: block; }
+.hero-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(18px, 2.2vw, 26px); font-weight: 400; color: rgba(245,239,231,0.5); margin-bottom: 40px; line-height: 1.4; }
+.hero-summary { font-size: 16px; line-height: 1.85; color: rgba(245,239,231,0.68); max-width: 480px; margin-bottom: 52px; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--red); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s, transform 0.15s; }
+.btn-primary:hover { background: var(--red-light); transform: translateY(-1px); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 15px 30px; background: transparent; color: rgba(245,239,231,0.7); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(245,239,231,0.2); border-radius: 2px; transition: border-color 0.2s, color 0.2s, transform 0.15s; }
+.btn-secondary:hover { border-color: rgba(245,239,231,0.5); color: #F5EFE7; transform: translateY(-1px); }
+.hero-right { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: center; padding-top: 60px; }
+.hero-photo-wrap { position: relative; width: 100%; max-width: 460px; align-self: flex-end; }
+.hero-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; display: block; filter: grayscale(15%) contrast(1.06); }
+.hero-photo-fallback { width: 100%; aspect-ratio: 4/5; background: #2C1F18; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 80px; color: rgba(185,28,28,0.25); }
+.hero-accent { position: absolute; bottom: 32px; left: -32px; background: var(--red); color: #fff; padding: 20px 28px; min-width: 180px; line-height: 1.6; }
+.hero-accent strong { display: block; font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; letter-spacing: 0; text-transform: none; line-height: 1; margin-bottom: 4px; }
+.hero-accent small { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* STAT STRIP */
+.stat-strip { background: var(--ink); display: flex; overflow: hidden; }
+.stat-item { flex: 1; padding: 36px 20px; border-right: 1px solid rgba(255,255,255,0.06); text-align: center; }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--red-light); line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 500; }
+
+/* SECTIONS */
+section { padding: 96px 80px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-kicker::before { content: ''; display: inline-block; width: 24px; height: 1.5px; background: var(--red); }
+.section-headline { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4vw, 52px); font-weight: 700; line-height: 1.12; color: var(--ink); margin-bottom: 32px; }
+.section-headline em { font-style: italic; color: var(--red); }
+
+/* ABOUT */
+.about { background: var(--cream); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-body p { font-size: 17px; line-height: 1.88; color: var(--ink-soft); margin-bottom: 22px; }
+.about-body p:last-child { margin-bottom: 0; }
+.pull-quote { border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin-bottom: 40px; font-family: 'Playfair Display', serif; font-size: 21px; font-style: italic; line-height: 1.55; color: var(--ink); }
+.credential-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.credential-item:last-child { border-bottom: none; }
+.credential-icon { width: 34px; height: 34px; background: var(--red-dim); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--red); font-size: 13px; font-weight: 700; }
+.credential-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.credential-sub { font-size: 12px; color: var(--muted); }
+
+/* TOPICS */
+.topics { background: var(--dark-2); color: #F5EFE7; }
+.topics .section-headline { color: #F5EFE7; }
+.topics-intro { font-size: 17px; line-height: 1.8; color: rgba(245,239,231,0.6); max-width: 600px; margin-bottom: 52px; }
+.topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.topic-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 36px 28px; transition: background 0.2s, border-color 0.2s; }
+.topic-card:hover { background: rgba(185,28,28,0.1); border-color: rgba(185,28,28,0.3); }
+.topic-num { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--red-light); margin-bottom: 18px; letter-spacing: 0.06em; }
+.topic-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; color: #F5EFE7; line-height: 1.3; margin-bottom: 12px; }
+.topic-body { font-size: 13px; line-height: 1.75; color: rgba(245,239,231,0.5); }
+
+/* PROOF */
+.proof { background: var(--warm); }
+.proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.proof-logos { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
+.proof-logo-chip { padding: 8px 16px; background: #fff; border: 1px solid var(--rule); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+.mission-box { background: var(--red); color: #fff; padding: 40px; position: relative; overflow: hidden; }
+.mission-box::after { content: '"'; position: absolute; top: -20px; right: 16px; font-family: 'Playfair Display', serif; font-size: 160px; font-weight: 900; color: rgba(255,255,255,0.07); line-height: 1; pointer-events: none; }
+.mission-quote { font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; line-height: 1.55; margin-bottom: 20px; position: relative; z-index: 1; }
+.mission-attr { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); position: relative; z-index: 1; }
+.accolade { display: flex; align-items: flex-start; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.accolade:last-child { border-bottom: none; }
+.accolade-dot { width: 9px; height: 9px; background: var(--red); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.accolade-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+.accolade-sub { font-size: 13px; color: var(--muted); }
+
+/* PODCAST */
+.podcast { background: var(--cream); border-top: 1px solid var(--rule); }
+.podcast-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.podcast-body { font-size: 17px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 32px; }
+.podcast-topics { list-style: none; margin-bottom: 40px; }
+.podcast-topics li { font-size: 14px; color: var(--ink-soft); padding: 10px 0; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 12px; }
+.podcast-topics li::before { content: ''; width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+.podcast-topics li:last-child { border-bottom: none; }
+.podcast-card { background: var(--dark); color: #F5EFE7; padding: 52px 44px; text-align: center; position: relative; width: 100%; overflow: hidden; }
+.podcast-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); }
+.podcast-mic { width: 64px; height: 64px; background: rgba(185,28,28,0.15); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; }
+.podcast-mic svg { width: 28px; height: 28px; fill: var(--red-light); }
+.podcast-card-headline { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 14px; }
+.podcast-card-sub { font-size: 14px; color: rgba(245,239,231,0.5); line-height: 1.7; margin-bottom: 36px; }
+.btn-podcast { display: inline-flex; align-items: center; gap: 9px; padding: 16px 32px; background: var(--red); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; width: 100%; justify-content: center; transition: background 0.2s, transform 0.15s; }
+.btn-podcast:hover { background: var(--red-light); transform: translateY(-1px); }
+
+/* CONNECT */
+.connect { background: var(--ink); color: #F5EFE7; padding: 80px; text-align: center; }
+.connect-headline { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4vw, 48px); font-weight: 700; color: #F5EFE7; margin-bottom: 16px; line-height: 1.15; }
+.connect-sub { font-size: 16px; color: rgba(245,239,231,0.48); margin-bottom: 48px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.connect-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+.connect-link { display: inline-flex; align-items: center; gap: 9px; padding: 14px 28px; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: all 0.2s; }
+.connect-link.outline { border: 1px solid rgba(245,239,231,0.18); color: rgba(245,239,231,0.65); }
+.connect-link.outline:hover { border-color: rgba(245,239,231,0.45); color: #F5EFE7; transform: translateY(-1px); }
+.connect-link.filled { background: var(--red); color: #fff; }
+.connect-link.filled:hover { background: var(--red-light); transform: translateY(-1px); }
+
+/* FILL MARKERS */
+.fill { background: #FEF08A; color: #713F12; border-radius: 3px; padding: 1px 5px; font-style: italic; font-size: 0.88em; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 60px 28px 40px; }
+  .hero-right { padding-top: 0; }
+  .hero-photo-wrap { max-width: 100%; }
+  .hero-accent { left: 16px; bottom: 16px; }
+  section { padding: 64px 28px; }
+  .about-grid, .proof-grid, .podcast-inner { grid-template-columns: 1fr; gap: 44px; }
+  .topics-grid { grid-template-columns: 1fr; }
+  .stat-strip { flex-wrap: wrap; }
+  .stat-item { flex: 1 1 50%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .connect { padding: 64px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Founder &amp; CEO · Red Fox Medical Courier</div>
+    <h1 class="hero-name">
+      Rebecca<br/>
+      <span>Massicotte.</span>
+    </h1>
+    <p class="hero-title">Building the infrastructure<br/>healthcare moves on.</p>
+    <p class="hero-summary">
+      Fourteen years ago, Rebecca Massicotte saw a systemic failure in medical logistics — missed pickups, broken communication, no accountability — and decided to fix it. Today, Red Fox delivers over 4.2 million items annually across 125+ cities, with a 98%+ on-time rate and zero call centers.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://redfoxmedicalcourier.com/request-a-quote/" target="_blank">Partner With Red Fox</a>
+      <a class="btn-secondary" href="https://www.linkedin.com/in/rebecca-massicotte/" target="_blank">Connect on LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img class="hero-photo"
+           src="https://redfoxmedicalcourier.com/wp-content/uploads/2025/08/Rebecca-Massicotte.avif"
+           alt="Rebecca Massicotte"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hero-photo-fallback" style="display:none;">RM</div>
+      <div class="hero-accent">
+        <strong>Est. 2010</strong>
+        <small>14 years in operation</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stat-strip">
+  <div class="stat-item"><div class="stat-num">4.2M+</div><div class="stat-label">Items Delivered Annually</div></div>
+  <div class="stat-item"><div class="stat-num">125+</div><div class="stat-label">Cities Served</div></div>
+  <div class="stat-item"><div class="stat-num">98%+</div><div class="stat-label">On-Time Delivery Rate</div></div>
+  <div class="stat-item"><div class="stat-num">80+</div><div class="stat-label">Trained Drivers Nationwide</div></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Operations, 365 Days/Year</div></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="section-kicker">About Rebecca</div>
+        <h2 class="section-headline">She didn't enter<br/>the industry.<br/><em>She rebuilt it.</em></h2>
+        <p>Rebecca Massicotte founded Red Fox Medical Courier in 2010 after identifying a gap that the industry had no interest in closing: healthcare facilities deserved a courier partner that actually acted like one. Large national carriers were treating lab specimens like packages and lab directors like ticket numbers. Nobody picked up the phone. Nobody knew your protocols.</p>
+        <p>She built the alternative. A company where every driver is certified beyond legal requirements. Where clients have a direct line to a real operations team — not an automated menu. Where a STAT run at 3am carries the same urgency as one at noon, because the patient waiting on the other end doesn't care what time it is.</p>
+        <p><span class="fill">[FILL — Rebecca's own words: what specifically made you start this? A moment, a conversation, something you saw that you couldn't unsee?]</span></p>
+        <p>Under her leadership, Red Fox has scaled from a local Tampa operation into a multi-state network spanning Florida, Michigan, Wisconsin, New York, Georgia, Alabama, Arkansas, and beyond — growing past $5M in annual revenue while maintaining the service standards of a boutique partner.</p>
+        <p>She serves on the board of the Florida Delivery Logistics Association, has been recognized by the Children's Movement of Florida as a community business leader, and holds state and national certifications for transporting infectious samples, Class 2 pharmaceuticals, radioactive materials, and oxygen.</p>
+      </div>
+
+      <div class="about-aside">
+        <div class="pull-quote">"We're not just moving packages — we're moving blood samples, organs, life-saving medications. Every delivery matters. Trust isn't built on big promises. It's built on showing up, every single time."</div>
+        <div class="credentials">
+          <div class="credential-item">
+            <div class="credential-icon">✦</div>
+            <div><div class="credential-title">University of Southern California</div><div class="credential-sub">Alumni</div></div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-icon">✦</div>
+            <div><div class="credential-title">Florida Delivery Logistics Association</div><div class="credential-sub">Board Member — Membership &amp; Member Engagement</div></div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-icon">✦</div>
+            <div><div class="credential-title">Children's Movement of Florida</div><div class="credential-sub">"Meet Our Bosses" — Recognized Community Leader</div></div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-icon">✦</div>
+            <div><div class="credential-title">Entrepreneurs' Organization (EO)</div><div class="credential-sub">Member — Tampa Chapter</div></div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-icon">✦</div>
+            <div><div class="credential-title">State &amp; National Transport Certifications</div><div class="credential-sub">Infectious samples · Class 2 Pharma · Radioactive · Oxygen · Indirect Air Carrier</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="topics">
+  <div class="section-inner">
+    <div class="section-kicker" style="color:var(--red-light);">What Rebecca Talks About</div>
+    <h2 class="section-headline" style="color:#F5EFE7;">Conversations she's<br/><em style="color:var(--red-light);">built to lead.</em></h2>
+    <p class="topics-intro">Whether you're a podcast host looking for a founder with real operational depth, or a healthcare executive evaluating a courier partner — Rebecca brings 14 years of hard-won conviction to the table.</p>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-num">01</div>
+        <div class="topic-title">Building a $5M+ Healthcare Company Without Investors</div>
+        <div class="topic-body">Bootstrapped from Tampa to 125+ cities — what it actually takes, what she'd do differently, and what most founders miss about scaling a service business.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">02</div>
+        <div class="topic-title">Why Medical Logistics Is Broken — And Who Pays the Price</div>
+        <div class="topic-body">71% of nurses encounter courier errors monthly affecting patient care. Rebecca explains the systemic failures and what a real solution requires.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">03</div>
+        <div class="topic-title">Leading 80 Independent Contractors at Scale</div>
+        <div class="topic-body">Managing a distributed 1099 workforce across multiple states — the training, trust systems, and accountability infrastructure behind it.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">04</div>
+        <div class="topic-title">Communication as the Most Underrated Competitive Moat</div>
+        <div class="topic-body">"No call centers" isn't a feature — it's a philosophy. How direct access drives retention, referrals, and premium pricing.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">05</div>
+        <div class="topic-title">The Compliance Gaps Most Couriers Don't Know They Have</div>
+        <div class="topic-body">Chain of custody, temperature protocols, HIPAA in motion — the certification stack that separates real medical logistics from generalist couriers.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">06</div>
+        <div class="topic-title">Female Founder in a Male-Dominated Industry</div>
+        <div class="topic-body">14 years of building in a space where few people looked like her — what it took, what it costs, and what it's worth.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="section-inner">
+    <div class="proof-grid">
+      <div class="proof-left">
+        <div class="section-kicker">Who We Serve</div>
+        <h2 class="section-headline">The healthcare<br/>facilities that<br/><em>depend on us.</em></h2>
+        <div class="proof-logos">
+          <div class="proof-logo-chip">Hospital Systems</div>
+          <div class="proof-logo-chip">Independent Labs</div>
+          <div class="proof-logo-chip">Pathology Centers</div>
+          <div class="proof-logo-chip">Nuclear Medicine</div>
+          <div class="proof-logo-chip">Pharmacies</div>
+          <div class="proof-logo-chip">Home Health</div>
+          <div class="proof-logo-chip">Phlebotomy Networks</div>
+          <div class="proof-logo-chip">Oncology Centers</div>
+        </div>
+        <div class="mission-box">
+          <div class="mission-quote">"Every client is family. We learn the nuances of each operation and build a delivery system tailored to their individual needs. Not a template. A real partnership."</div>
+          <div class="mission-attr">Rebecca Massicotte — President &amp; Founder</div>
+        </div>
+      </div>
+      <div class="proof-right">
+        <div class="section-kicker" style="margin-bottom:28px;">Recognition &amp; Affiliations</div>
+        <div>
+          <div class="accolade"><div class="accolade-dot"></div><div><div class="accolade-title">Florida Delivery Logistics Association</div><div class="accolade-sub">Board Member — Membership &amp; Engagement, 3+ years</div></div></div>
+          <div class="accolade"><div class="accolade-dot"></div><div><div class="accolade-title">Children's Movement of Florida</div><div class="accolade-sub">"Meet Our Bosses" Community Business Leader</div></div></div>
+          <div class="accolade"><div class="accolade-dot"></div><div><div class="accolade-title">Entrepreneurs' Organization (EO)</div><div class="accolade-sub">Tampa Chapter Member</div></div></div>
+          <div class="accolade"><div class="accolade-dot"></div><div><div class="accolade-title">State &amp; National Certifications</div><div class="accolade-sub">Infectious samples · Class 2 Pharma · Radioactive · Oxygen</div></div></div>
+          <div class="accolade"><div class="accolade-dot"></div><div><div class="accolade-title">University of Southern California</div><div class="accolade-sub">Alumni</div></div></div>
+          <div class="accolade"><div class="accolade-dot"></div><div><div class="accolade-title"><span class="fill">[FILL: Award, press feature, or industry recognition]</span></div><div class="accolade-sub"><span class="fill">[Year · Source]</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section class="podcast">
+  <div class="section-inner">
+    <div class="podcast-inner">
+      <div class="podcast-left">
+        <div class="section-kicker">For Podcast Hosts</div>
+        <h2 class="section-headline">A guest who's<br/><em>actually lived it.</em></h2>
+        <p class="podcast-body">Rebecca doesn't discuss healthcare logistics in theory. She's dispatched drivers at 3am, navigated STAT failures, and built a multi-state operation across 14 years — one client relationship at a time. If your audience includes healthcare operators, entrepreneurs, or logistics leaders, this is a conversation they'll remember.</p>
+        <ul class="podcast-topics">
+          <li>Building a bootstrapped service company past $5M</li>
+          <li>The real cost of broken medical logistics on patient outcomes</li>
+          <li>Managing 80+ independent contractors without losing standards</li>
+          <li>Why direct communication is the most underrated competitive moat</li>
+          <li>Scaling a service business from local to multi-state</li>
+          <li>Female founder in a male-dominated industry — the unfiltered version</li>
+        </ul>
+        <a class="btn-primary" href="https://www.podmatch.com/member/rebeccamassicotte" target="_blank">Invite Rebecca to Your Podcast →</a>
+        <p style="font-size:12px; color:var(--muted); margin-top:10px;"><span class="fill">[CONFIRM: Verify exact PodMatch profile URL before publishing]</span></p>
+      </div>
+      <div class="podcast-right">
+        <div class="podcast-card">
+          <div class="podcast-mic">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v6a2 2 0 0 0 4 0V5a2 2 0 0 0-2-2zM8 11a1 1 0 0 1 1 1 3 3 0 0 0 6 0 1 1 0 1 1 2 0 5 5 0 0 1-4 4.9V19h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2v-2.1A5 5 0 0 1 7 12a1 1 0 0 1 1-1z"/></svg>
+          </div>
+          <div class="podcast-card-headline">Invite Rebecca<br/>to Your Podcast</div>
+          <div class="podcast-card-sub">14 years. 125+ cities. 4.2M deliveries.<br/>One founder who has a lot to say.</div>
+          <a class="btn-podcast" href="https://www.podmatch.com/member/rebeccamassicotte" target="_blank">Book on PodMatch →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<div class="connect">
+  <h2 class="connect-headline">Ready to start a conversation?</h2>
+  <p class="connect-sub">Whether you're a healthcare facility ready for a real courier partner, a podcast host looking for operational depth, or an investor interested in what 14 years of category-defining growth looks like — Rebecca is the right call.</p>
+  <div class="connect-links">
+    <a class="connect-link filled" href="https://redfoxmedicalcourier.com/request-a-quote/" target="_blank">Request a Quote</a>
+    <a class="connect-link outline" href="https://www.podmatch.com/member/rebeccamassicotte" target="_blank">Podcast Booking</a>
+    <a class="connect-link outline" href="https://www.linkedin.com/in/rebecca-massicotte/" target="_blank">LinkedIn</a>
+    <a class="connect-link outline" href="mailto:info@redfoxmedicalcourier.com">Email Directly</a>
+  </div>
+</div>
+
+</body>
+</html>
